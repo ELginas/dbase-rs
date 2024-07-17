@@ -53,6 +53,15 @@ pub enum CodePageMark {
     CP1253,
     Utf8,
     Invalid,
+    CP855,
+    CP860,
+    CP862,
+    CP863,
+    CP864,
+    CP869,
+    CP910,
+    CP1257,
+    CP1258,
 }
 
 impl CodePageMark {
@@ -90,6 +99,15 @@ impl CodePageMark {
                 | CodePageMark::CP932 => {
                     return None;
                 }
+                CodePageMark::CP855 => DynEncoding::new(code_pages::CP855),
+                CodePageMark::CP860 => DynEncoding::new(code_pages::CP860),
+                CodePageMark::CP862 => DynEncoding::new(code_pages::CP862),
+                CodePageMark::CP863 => DynEncoding::new(code_pages::CP863),
+                CodePageMark::CP864 => DynEncoding::new(code_pages::CP864),
+                CodePageMark::CP869 => DynEncoding::new(code_pages::CP869),
+                CodePageMark::CP910 => DynEncoding::new(code_pages::CP910),
+                CodePageMark::CP1257 => DynEncoding::new(code_pages::CP1257),
+                CodePageMark::CP1258 => DynEncoding::new(code_pages::CP1258),
             })
         }
         #[cfg(not(feature = "yore"))]
