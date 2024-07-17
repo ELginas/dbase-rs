@@ -49,6 +49,12 @@ pub struct TableInfo {
     pub(crate) encoding: DynEncoding,
 }
 
+impl TableInfo {
+    pub fn reset_num_records(&mut self) {
+        self.header.num_records = 0;
+    }
+}
+
 /// Options related to reading
 #[derive(Copy, Clone, Debug)]
 pub struct ReadingOptions {
